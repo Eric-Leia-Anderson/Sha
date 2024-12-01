@@ -92,23 +92,121 @@ public class crackHash {
 //	        bw.write("\n");
 	    	for(String st : words) {
 	    		//allWords.add(st);
-//	    		msdDigest.update(st.getBytes("UTF-8"), 0, st.length());
-//	    		byte[] hash = msdDigest.digest();
-//		        String hashstr = String.format("%040x", new BigInteger(1, hash));
-//		        bw.write(st+",");
-//		        bw.write(hashstr);//or is it hex?
-//		        bw.write("\n");
-//	    		List<String> stringWithNumbers = addNumbers(st);
-//	    		for(String str : stringWithNumbers) {
-//	    			msdDigest.update(str.getBytes("UTF-8"), 0, str.length());
-//	    			byte[] hash = msdDigest.digest();
-//			        String hashstr = String.format("%040x", new BigInteger(1, hash));
-//			        bw.write(str+",");
+	    		msdDigest.update(st.getBytes("UTF-8"), 0, st.length());
+	    		byte[] hash = msdDigest.digest();
+		        String hashstr = String.format("%040x", new BigInteger(1, hash));
+		        bw.write(st+",");
+		        bw.write(hashstr);//or is it hex?
+		        bw.write("\n");
+	    		List<String> stringWithNumbers = addNumbers(st);
+	    		for(String str : stringWithNumbers) {
+	    			msdDigest.update(str.getBytes("UTF-8"), 0, str.length());
+	    			hash = msdDigest.digest();
+			        hashstr = String.format("%040x", new BigInteger(1, hash));
+			        bw.write(str+",");
+			        bw.write(hashstr);//or is it hex?
+			        bw.write("\n");
+//			        String noE = replaceE(st);
+//		    		String noI = replaceI(st);
+//		    		String noO = replaceO(st);
+//		    		String allVowels = replaceVowels(st);
+//		    		String twovowels1 = replace2Vowels1(st);
+//		    		String twovowels2 = replace2Vowels2(st);
+//		    		String twovowels3 = replace2Vowels3(st);
+//		    		msdDigest.update(noE.getBytes("UTF-8"), 0, noE.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(noE+",");
 //			        bw.write(hashstr);//or is it hex?
 //			        bw.write("\n");
-//	    			//allWords.add(str);
-//	    		}
-//	    		String noVowels = removeVowels(st);
+//			        msdDigest.update(noI.getBytes("UTF-8"), 0, noI.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(noI+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(noO.getBytes("UTF-8"), 0, noO.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(noO+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(twovowels3.getBytes("UTF-8"), 0, twovowels3.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(twovowels3+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(allVowels.getBytes("UTF-8"), 0, allVowels.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(allVowels+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(twovowels1.getBytes("UTF-8"), 0, twovowels1.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(twovowels1+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(twovowels2.getBytes("UTF-8"), 0, twovowels2.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(twovowels2+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+	    			//allWords.add(str);
+	    		}
+//	    		String noE = replaceE(st);
+//	    		String noI = replaceI(st);
+//	    		String noO = replaceO(st);
+//	    		String allVowels = replaceVowels(st);
+//	    		String twovowels1 = replace2Vowels1(st);
+//	    		String twovowels2 = replace2Vowels2(st);
+//	    		String twovowels3 = replace2Vowels3(st);
+//	    		
+//	    		msdDigest.update(noE.getBytes("UTF-8"), 0, noE.length());
+//    			hash = msdDigest.digest();
+//		        hashstr = String.format("%040x", new BigInteger(1, hash));
+//		        bw.write(noE+",");
+//		        bw.write(hashstr);//or is it hex?
+//		        bw.write("\n");
+//		        msdDigest.update(noI.getBytes("UTF-8"), 0, noI.length());
+//    			hash = msdDigest.digest();
+//		        hashstr = String.format("%040x", new BigInteger(1, hash));
+//		        bw.write(noI+",");
+//		        bw.write(hashstr);//or is it hex?
+//		        bw.write("\n");
+//		        msdDigest.update(noO.getBytes("UTF-8"), 0, noO.length());
+//    			hash = msdDigest.digest();
+//		        hashstr = String.format("%040x", new BigInteger(1, hash));
+//		        bw.write(noO+",");
+//		        bw.write(hashstr);//or is it hex?
+//		        bw.write("\n");
+//		        msdDigest.update(twovowels3.getBytes("UTF-8"), 0, twovowels3.length());
+//    			hash = msdDigest.digest();
+//		        hashstr = String.format("%040x", new BigInteger(1, hash));
+//		        bw.write(twovowels3+",");
+//		        bw.write(hashstr);//or is it hex?
+//		        bw.write("\n");
+//		        msdDigest.update(allVowels.getBytes("UTF-8"), 0, allVowels.length());
+//    			hash = msdDigest.digest();
+//		        hashstr = String.format("%040x", new BigInteger(1, hash));
+//		        bw.write(allVowels+",");
+//		        bw.write(hashstr);//or is it hex?
+//		        bw.write("\n");
+//		        msdDigest.update(twovowels1.getBytes("UTF-8"), 0, twovowels1.length());
+//    			hash = msdDigest.digest();
+//		        hashstr = String.format("%040x", new BigInteger(1, hash));
+//		        bw.write(twovowels1+",");
+//		        bw.write(hashstr);//or is it hex?
+//		        bw.write("\n");
+//		        msdDigest.update(twovowels2.getBytes("UTF-8"), 0, twovowels2.length());
+//    			hash = msdDigest.digest();
+//		        hashstr = String.format("%040x", new BigInteger(1, hash));
+//		        bw.write(twovowels2+",");
+//		        bw.write(hashstr);//or is it hex?
+//		        bw.write("\n");
 //	    		List<String> noVowelNumbers = addNumbers(noVowels);
 //	    		//allWords.add(noVowels);
 //	    		msdDigest.update(noVowels.getBytes("UTF-8"), 0, noVowels.length());
@@ -167,11 +265,61 @@ public class crackHash {
 	    		for(String stuff : comboWords) {
 	    			//allWords.add(stuff);
 	    			msdDigest.update(stuff.getBytes("UTF-8"), 0, stuff.length());
-			        byte[] hash = msdDigest.digest();
-			        String hashstr = String.format("%040x", new BigInteger(1, hash));
+			        hash = msdDigest.digest();
+			        hashstr = String.format("%040x", new BigInteger(1, hash));
 			        bw.write(stuff+",");
 			        bw.write(hashstr);//or is it hex?
 			        bw.write("\n");
+//			        noE = replaceE(stuff);
+//		    		noI = replaceI(stuff);
+//		    		noO = replaceO(stuff);
+//		    		allVowels = replaceVowels(stuff);
+//		    		twovowels1 = replace2Vowels1(stuff);
+//		    		twovowels2 = replace2Vowels2(stuff);
+//		    		twovowels3 = replace2Vowels3(stuff);
+//		    		
+//		    		msdDigest.update(noE.getBytes("UTF-8"), 0, noE.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(noE+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(noI.getBytes("UTF-8"), 0, noI.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(noI+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(noO.getBytes("UTF-8"), 0, noO.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(noO+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(twovowels3.getBytes("UTF-8"), 0, twovowels3.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(twovowels3+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(allVowels.getBytes("UTF-8"), 0, allVowels.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(allVowels+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(twovowels1.getBytes("UTF-8"), 0, twovowels1.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(twovowels1+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
+//			        msdDigest.update(twovowels2.getBytes("UTF-8"), 0, twovowels2.length());
+//	    			hash = msdDigest.digest();
+//			        hashstr = String.format("%040x", new BigInteger(1, hash));
+//			        bw.write(twovowels2+",");
+//			        bw.write(hashstr);//or is it hex?
+//			        bw.write("\n");
 	    			List<String> comboWithNumbers = addNumbers(stuff);
 	    			for(String s : comboWithNumbers) {
 	    				msdDigest.update(s.getBytes("UTF-8"), 0, s.length());
@@ -180,6 +328,55 @@ public class crackHash {
 				        bw.write(s+",");
 				        bw.write(hashstr);//or is it hex?
 				        bw.write("\n");
+//				        noE = replaceE(s);
+//			    		noI = replaceI(s);
+//			    		noO = replaceO(s);
+//			    		allVowels = replaceVowels(s);
+//			    		twovowels1 = replace2Vowels1(s);
+//			    		twovowels2 = replace2Vowels2(s);
+//			    		twovowels3 = replace2Vowels3(s);
+//			    		msdDigest.update(noE.getBytes("UTF-8"), 0, noE.length());
+//		    			hash = msdDigest.digest();
+//				        hashstr = String.format("%040x", new BigInteger(1, hash));
+//				        bw.write(noE+",");
+//				        bw.write(hashstr);//or is it hex?
+//				        bw.write("\n");
+//				        msdDigest.update(noI.getBytes("UTF-8"), 0, noI.length());
+//		    			hash = msdDigest.digest();
+//				        hashstr = String.format("%040x", new BigInteger(1, hash));
+//				        bw.write(noI+",");
+//				        bw.write(hashstr);//or is it hex?
+//				        bw.write("\n");
+//				        msdDigest.update(noO.getBytes("UTF-8"), 0, noO.length());
+//		    			hash = msdDigest.digest();
+//				        hashstr = String.format("%040x", new BigInteger(1, hash));
+//				        bw.write(noO+",");
+//				        bw.write(hashstr);//or is it hex?
+//				        bw.write("\n");
+//				        msdDigest.update(twovowels3.getBytes("UTF-8"), 0, twovowels3.length());
+//		    			hash = msdDigest.digest();
+//				        hashstr = String.format("%040x", new BigInteger(1, hash));
+//				        bw.write(twovowels3+",");
+//				        bw.write(hashstr);//or is it hex?
+//				        bw.write("\n");
+//				        msdDigest.update(allVowels.getBytes("UTF-8"), 0, allVowels.length());
+//		    			hash = msdDigest.digest();
+//				        hashstr = String.format("%040x", new BigInteger(1, hash));
+//				        bw.write(allVowels+",");
+//				        bw.write(hashstr);//or is it hex?
+//				        bw.write("\n");
+//				        msdDigest.update(twovowels1.getBytes("UTF-8"), 0, twovowels1.length());
+//		    			hash = msdDigest.digest();
+//				        hashstr = String.format("%040x", new BigInteger(1, hash));
+//				        bw.write(twovowels1+",");
+//				        bw.write(hashstr);//or is it hex?
+//				        bw.write("\n");
+//				        msdDigest.update(twovowels2.getBytes("UTF-8"), 0, twovowels2.length());
+//		    			hash = msdDigest.digest();
+//				        hashstr = String.format("%040x", new BigInteger(1, hash));
+//				        bw.write(twovowels2+",");
+//				        bw.write(hashstr);//or is it hex?
+//				        bw.write("\n");
 		    			//allWords.add(s);
 		    		}
 	    		}
@@ -237,49 +434,87 @@ public class crackHash {
 	public static List<String> addNumbers(String str) {
 		List<String> list = new ArrayList<String>();
 //		//0-10
-		for(int i = 0; i < 10 ; i++) {
-			list.add(str+i);
-		}
+//		for(int i = 0; i < 10 ; i++) {
+//			list.add(str+i);
+//		}
 //		//00-20
-		list.add(str+00);
-		for(int j = 0; j < 20; j++) {
-			if(j < 10) {
-				list.add(str+0+j);
-			}
-			else {
-				list.add(str+j);
-			}
-		}
+//		list.add(str+00);
+//		for(int j = 0; j < 20; j++) {
+//			if(j < 10) {
+//				list.add(str+0+j);
+//			}
+//			else {
+//				list.add(str+j);
+//			}
+//		}
 		//100-900
-		for(int i = 1; i < 10 ; i++) {
-			list.add(str+i+"00");
-		}
+//		for(int i = 1; i < 10 ; i++) {
+//			list.add(str+i+"00");
+//		}
 		//111-999
-		for(int i = 1; i < 10 ; i++) {
-			list.add(str+i+i+i);
-		}
+//		for(int i = 1; i < 10 ; i++) {
+//			list.add(str+i+i+i);
+//		}
 		//001-009
-		for(int i = 1; i < 10 ; i++) {
-			list.add(str+"00"+i);
-		}
+//		for(int i = 1; i < 10 ; i++) {
+//			list.add(str+"00"+i);
+//		}
 		//1960-2000
-		for(int i = 1960; i < 2000 ; i++) {
+//		for(int i = 1960; i < 2000 ; i++) {
+//			list.add(str+i);
+//		}
+//		list.add(str+"12");
+//		list.add(str+"123");
+//		list.add(str+"1234");
+//		list.add(str+"12345");
+//		list.add(str+"123456");
+//		list.add(str+"1234567");
+//		list.add(str+"12345678");
+//		list.add(str+"123456789");
+		
+//		for(int i = 100; i < 998 ; i++) {
+//			list.add(str+i);
+//		}
+		
+		for(int i = 20; i < 100; i++) {
 			list.add(str+i);
 		}
-		list.add(str+"12");
-		list.add(str+"123");
-		list.add(str+"1234");
-		list.add(str+"12345");
-		list.add(str+"123456");
-		list.add(str+"1234567");
-		list.add(str+"12345678");
-		list.add(str+"123456789");
 		return list;
 	}
 	
-	public static String removeVowels(String word) {
-		return word.replaceAll("[aeiouAEIOU]", "");
+	public static String replaceE(String word) {
+		return word.replaceAll("[eE]", "3");
 	}
+	
+	public static String replaceO(String word) {
+		return word.replaceAll("[oO]", "0");
+	}
+	
+	public static String replaceI(String word) {
+		return word.replaceAll("[iI]", "1");
+	}
+	
+	public static String replaceVowels(String word) {
+		word.replaceAll("[eE]", "3");
+		word.replaceAll("[oO]", "0");
+		return word.replaceAll("[iI]", "1");
+	}
+	
+	public static String replace2Vowels1(String word) {
+		word.replaceAll("[eE]", "3");
+		return word.replaceAll("[oO]", "0");
+	}
+	
+	public static String replace2Vowels2(String word) {
+		word.replaceAll("[eE]", "3");
+		return word.replaceAll("[iI]", "1");
+	}
+	
+	public static String replace2Vowels3(String word) {
+		word.replaceAll("[oO]", "0");
+		return word.replaceAll("[iI]", "1");
+	}
+	
 	
 	public static String backwards(String word) {
 		StringBuilder sb = new StringBuilder(word);
@@ -355,8 +590,8 @@ public class crackHash {
 	}
 	
 	public static void main(String[] args) {
-		List<String> read = readFile();
-		boolean compute = computeHashes(read);
-		//boolean check = checkHashes();
+		//List<String> read = readFile();
+		//boolean compute = computeHashes(read);
+		boolean check = checkHashes();
 	}
 }
